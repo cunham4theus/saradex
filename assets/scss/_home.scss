@@ -1,0 +1,77 @@
+.container {
+  padding: 2rem;
+  max-width: 60rem;
+  display: grid;
+  margin: 0 auto;
+  position: relative;
+  z-index: 999;
+  height: calc(60rem + 20rem);
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.4);
+    filter: blur(5px);
+    z-index: -1;
+  }
+  &__calculadora {
+    width: 100%;
+    gap: 4rem;
+    display: flex;
+    height: 40rem;
+    &__formulario {
+      display: grid;
+      gap: 2rem;
+      width: 80%;
+      margin: 0 auto;
+      input {
+        display: block;
+        width: 100%;
+        border-style: none;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        margin: 0 auto;
+        padding: 0.8rem;
+        font-size: 2rem;
+        font-family: 'Josefin Sans';
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        place-self: center;
+        padding:1rem 2rem;
+        border-radius: .5rem;
+        border-style: none;
+        cursor: pointer;
+        font-size: 2rem;
+        font-family: "Josefin Sans";
+        background-color: whitesmoke;
+        transition: all ease-in-out .2s;
+        &:hover {
+          background-color: lighten(whitesmoke, 15%);
+          transform: translateY(-.2rem);
+        }
+        &:active{
+          transform: translateY(.2rem);
+        }
+      }
+    }
+    .resultado-container {
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        object-fit: cover;
+        width: 12rem;
+      }
+    }
+  }
+}
